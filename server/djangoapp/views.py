@@ -91,10 +91,11 @@ def registration(request):
 def get_dealerships(request, state="All"):
     if(state == "All"):
         endpoint = "/fetchDealers"
-    
-:
-
-endendpoint()_requestget = dealershipsde    statestate+/sDealerchfet/"" = endpointen        
+    else:
+        endpoint = "/fetchDealers/"+state
+    dealerships = get_request(endpoint)
+    return JsonResponse({"status":200,"dealers":dealerships})
+     
 
 
 
